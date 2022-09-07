@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['user_login'])) { header("location:../index.php");}
+include '../functions/userfunctions.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,8 +43,8 @@
             <a class="nav-link mx-2" href="#about">About</a>
             <a class="nav-link mx-2" href="#resep">Resep</a>
             <a class="nav-link mx-2" href="#contact">Contact</a>
-            <a class="nav-link mx-2" href="inputresep.html">Tambah Resep</a>
-            <a class="nav-link mx-2" href="login.html">Login</a>
+            <a class="nav-link mx-2" href="inputresep.php">Tambah Resep</a>
+            <a class="nav-link mx-2" href="logout.php">Logout</a>
           </div>    
         </div>     
        </div>
@@ -122,57 +128,23 @@
     <!-- Resep -->
     <section id="resep">
       <div class="container costum-resep">
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-4">
+        <div class="row mt-3">
+          <?php
+            $function = new userFunction();
+            $read = $function->readCategory();
+            while($data = $read->fetch_assoc()) {
+          ?>
+          <div class="col-lg-4 d-flex justify-content-center mb-3" data-aos="flip-left">
             <div class="card" style="width: 18rem;">
-              <img src="/assets/img/rese-rendang2.jpeg" class="card-img-top" alt="...">
+              <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="gambar rendang">
               <div class="card-body">
-                <h5 class="card-title">Makanan Pulau Sumatra</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title"><?= $data['judul'] ?></h5>
+                <p class="card-text"><?= $data['description'] ?></p>
+                <a href="kategori.php" class="btn button-contact">Lihat Lebih Lanjut</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img src="/assets/img/gudeg.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Makanan Pulau Jawa</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img src="/assets/img/ayam-cincane.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Makanan Pulau Kalimantan</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 d-flex justify-content-center">
-            <div class="card" style="width: 18rem;">
-              <img src="/assets/img/coto-makassar.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Makanan Pulau Sulawesi</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 d-flex justify-content-center">
-            <div class="card" style="width: 18rem;">
-              <img src="/assets/img/papeda.jpeg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Makanan Pulau Papua</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
         </div>
       </div>
     </section>
@@ -235,37 +207,9 @@
         </div>
       </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,256L48,261.3C96,267,192,277,288,266.7C384,256,480,224,576,181.3C672,139,768,85,864,96C960,107,1056,181,1152,224C1248,267,1344,277,1392,282.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  
     <!-- Akhir Contact -->
 
-    <!-- Login -->
-    <section>
-      <div class="container" data-aos="fade-down">
-        <div class="row justify-content-center">
-          <h1 class="text-center fw-bold">Login</h1>
-          <div class="col-lg-6">
-            <form>
-              <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email Anda</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-              </div>
-              <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" required>
-              </div>
-              <div class="mb-3">
-                <button type="submit" class="btn button-contact">Masuk</button>
-              </div>
-            </form>
-            <div class="mb-3">
-              <a href="daftar.html" class="btn button-contact">Buat Akun</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Akhir Login -->
-    
     <!-- Footer -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,128L48,117.3C96,107,192,85,288,90.7C384,96,480,128,576,154.7C672,181,768,203,864,181.3C960,160,1056,96,1152,80C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <footer>
