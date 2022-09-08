@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['user_login'])) { header("location:../index.php");}
+include '../functions/userfunctions.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +43,7 @@
             <a class="nav-link mx-2" href="#about">About</a>
             <a class="nav-link mx-2" href="#resep">Resep</a>
             <a class="nav-link mx-2" href="#contact">Contact</a>
-            <a class="nav-link mx-2" href="#login">Login</a>
+            
           </div>    
         </div>     
        </div>
@@ -53,7 +59,7 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../assets/img/soto.webp" class="d-block w-100 soto" alt="gambar soto betawi" />
+          <img src="../assets/img/soto.webp" class="d-block w-100 soto" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <div class="text-box">
               <h1 class="judul position-absolute"><span class="auto-input"></span></h1>
@@ -66,14 +72,14 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/sate.webp" class="d-block w-100" alt="gambar sate madura" />
+          <img src="../assets/img/sate.webp" class="d-block w-100" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5 class="fw-bold">Sate Madura</h5>
             <p>Sate Madura adalah sate yang memiliki bumbu khas Madura. Sate Madura biasanya terbuat dari ayam. Madura selain terkenal sebagai pulau garam, juga terkenal dengan satenya.</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../assets/img/rendang.webp" class="d-block w-100 rendang" alt="gambar rendang" />
+          <img src="../assets/img/rendang.webp" class="d-block w-100 rendang" alt="..." />
           <div class="carousel-caption d-none d-md-block">
             <h5 class="fw-bold">Rendang</h5>
             <p>
@@ -116,70 +122,80 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,64L48,58.7C96,53,192,43,288,80C384,117,480,203,576,197.3C672,192,768,96,864,64C960,32,1056,64,1152,80C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,256L48,250.7C96,245,192,235,288,197.3C384,160,480,96,576,101.3C672,107,768,181,864,213.3C960,245,1056,235,1152,208C1248,181,1344,139,1392,117.3L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
     <!-- Akhir About -->
 
     <!-- Resep -->
     <section id="resep">
       <div class="container costum-resep">
         <div class="row mt-3">
+          <?php
+            $function = new userFunction();
+            $read = $function->readCategory();
+            while($data = $read->fetch_assoc()) {
+          ?>
           <div class="col-lg-4 d-flex justify-content-center mb-3" data-aos="flip-left">
             <div class="card" style="width: 18rem;">
-              <img src="/assets/img/rese-rendang2.jpeg" class="card-img-top" alt="gambar rendang">
+              <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="gambar rendang">
               <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
-                <a href="kategori.html" class="btn button-contact">Lihat Lebih Lanjut</a>
+<<<<<<< HEAD:user/dashboard.html
+                <h5 class="card-title">Makanan Pulau Sumatra</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 d-flex justify-content-center mb-3" data-aos="flip-left" data-aos-delay="200">
+          <div class="col-lg-4">
             <div class="card" style="width: 18rem;">
-              <img src="/assets/img/gudeg.jpeg" class="card-img-top" alt="gambar gudeg">
+              <img src="/assets/img/gudeg.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
-                <a href="kategori.html" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <h5 class="card-title">Makanan Pulau Jawa</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 d-flex justify-content-center mb-3" data-aos="flip-left" data-aos-delay="300">
+          <div class="col-lg-4">
             <div class="card" style="width: 18rem;">
-              <img src="/assets/img/ayam-cincane.jpeg" class="card-img-top" alt="gambar ayam cincane">
+              <img src="/assets/img/ayam-cincane.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
-                <a href="kategori.html" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <h5 class="card-title">Makanan Pulau Kalimantan</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn button-contact">Klik Lebih lanjut</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 d-flex justify-content-center mb-3 mt-2" data-aos="flip-left" data-aos-delay="400">
+          <div class="col-lg-6 d-flex justify-content-center">
             <div class="card" style="width: 18rem;">
-              <img src="/assets/img/coto-makassar.jpeg" class="card-img-top" alt="gambar coto makassar">
+              <img src="/assets/img/coto-makassar.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
-                <a href="kategori.html" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <h5 class="card-title">Makanan Pulau Sulawesi</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>
             </div>
           </div>
-          <div class="col-lg-6 d-flex justify-content-center mt-2" data-aos="flip-left" data-aos-delay="500">
+          <div class="col-lg-6 d-flex justify-content-center">
             <div class="card" style="width: 18rem;">
-              <img src="/assets/img/papeda.jpeg" class="card-img-top" alt="gambar papeda">
+              <img src="/assets/img/papeda.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
-                <a href="kategori.html" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <h5 class="card-title">Makanan Pulau Papua</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn button-contact">Klik Lebih Lanjut</a>
+=======
+                <h5 class="card-title"><?= $data['judul'] ?></h5>
+                <p class="card-text"><?= $data['description'] ?></p>
+                <a href="kategori.php" class="btn button-contact">Lihat Lebih Lanjut</a>
+>>>>>>> bf71be66dbf658d021199745330db9ea02d72e34:user/dashboard.php
               </div>
             </div>
           </div>
+          <?php } ?>
         </div>
       </div>
     </section>
     <!-- Akhir Resep -->
 
     <!-- Contact  -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,128L48,122.7C96,117,192,107,288,117.3C384,128,480,160,576,170.7C672,181,768,171,864,144C960,117,1056,75,1152,69.3C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <section id="contact">
       <div class="container-fluid costum-contact">
         <div class="container p-5 contact-costum">
@@ -191,9 +207,9 @@
               </div> 
               <div class="kontak" data-aos="fade-right" data-aos-delay="200">
                 <h5>Kontak</h5>
-                <div class="lok d-flex mb-3">
+                <div class="lok d-flex">
                   <i class="bi bi-building"></i>
-                  <a href="https://www.google.com/maps/place/SMK+Cyber+Media+-+Jakarta/@-6.2527738,106.8374465,17z/data=!3m1!4b1!4m5!3m4!1s0x2e69f3ca249d6f27:0xcf475d9ff301b11f!8m2!3d-6.2527791!4d106.8396405" class="ms-2 costum-jalan" target="_blank">Jl. Duren Tiga Raya No.12, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan.</a>
+                  <p class="ms-2">Jl. Duren Tiga Raya No.12, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan.</p>
                 </div>
                 <div class="telpon d-flex">
                   <i class="bi bi-telephone"></i>
@@ -236,95 +252,9 @@
         </div>
       </div>
     </section>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,256L48,261.3C96,267,192,277,288,266.7C384,256,480,224,576,181.3C672,139,768,85,864,96C960,107,1056,181,1152,224C1248,267,1344,277,1392,282.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+  
     <!-- Akhir Contact -->
 
-    <!-- Login -->
-    <section id="login">
-      <div class="container" data-aos="fade-down">
-        <div class="row justify-content-center">
-          <h1 class="text-center fw-bold">Login</h1>
-        <div class="col-lg-6">
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email Anda</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" required>
-            </div>
-            <div class="mb-3">
-              <button type="submit" class="btn button-contact">Masuk</button>
-            </div>
-            </form>
-            <div class="mb-3">
-
-          <!-- Button trigger modal -->
-          <button type="button" class="btn button-contact" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Buat Akun
-          </button>
-
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Daftar</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <form>
-                    <div class="mb-3">
-                      <label class="form-label">Nama</label>
-                      <input type="text" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputEmail1" class="form-label">Email</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-                    </div>
-                    <div class="mb-3">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" required>
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label" for="day">Tanggal Lahir</label>
-                      <div class="birthday d-flex justify-content-around">
-                        <select class="form-select w-25" aria-label="Default select example" required>
-                          <option value="1">One</option>
-                        </select>
-                        <select class="form-select w-25" aria-label="Default select example" required>
-                          <option value="januari">Januari</option>
-                          <option value="febuari">Febuari</option>
-                          <option value="maret">Maret</option>
-                          <option value="April">April</option>
-                          <option value="Mei">Mei</option>
-                          <option value="Juni">Juni</option>
-                          <option value="Juli">Juli</option>
-                          <option value="Agustus">Agustus</option>
-                          <option value="September">September</option>
-                          <option value="Oktober">Oktober</option>
-                          <option value="November">November</option>
-                          <option value="Desember">Desember</option>
-                        </select>
-                        <select class="form-select w-25" aria-label="Default select example" required>
-                          <option value="januari">Januari</option>
-                        </select>
-                      </div>
-                    </div>
-                    <button type="submit" class="btn button-register button-kirim mt-2">Kirim</button>
-                  </form>
-                </div>        
-              </div>
-            </div>
-          </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-        <!-- Akhir Login -->
-    
     <!-- Footer -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,128L48,117.3C96,107,192,85,288,90.7C384,96,480,128,576,154.7C672,181,768,203,864,181.3C960,160,1056,96,1152,80C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <footer>
@@ -350,10 +280,10 @@
               <p>Forums</p>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <p class="text-center copyright p-3">Copyright ©️ Resep Makananku 2022</p>
+          <div class="row">
+            <div class="col-12">
+              <p class="text-center copyright">Copyright © Resep Makananku 2022</p>
+            </div>
           </div>
         </div>
       </div>

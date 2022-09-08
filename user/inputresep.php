@@ -33,12 +33,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
+<<<<<<< HEAD:user/inputresep.html
             <a class="nav-link mx-2 " href="#home">Home</a>
             <a class="nav-link mx-2" href="#about">About</a>
             <a class="nav-link mx-2" href="#resep">Resep</a>
             <a class="nav-link mx-2" href="#contact">Contact</a>
             <a class="nav-link mx-2" href="inputresep.html">Tambah Resep</a>
             <a class="nav-link mx-2" href="./pages/index.html#login">Login</a>
+=======
+            <a class="nav-link mx-2 " href="dashboard.php">Home</a>
+            <a class="nav-link mx-2" href="dashboard.php#about">About</a>
+            <a class="nav-link mx-2" href="dashboard.php#resep">Resep</a>
+            <a class="nav-link mx-2" href="dashboard.php#contact">Contact</a>
+            <a class="nav-link mx-2" href="inputresep.php">Tambah Resep</a>
+            <a class="nav-link mx-2" href="logout.php">Logout</a>
+>>>>>>> bf71be66dbf658d021199745330db9ea02d72e34:user/inputresep.php
           </div>    
         </div>     
        </div>
@@ -51,16 +60,24 @@
         <div class="col-12">
           <div class="container" data-aos="fade-down">
             <div class="row justify-content-center">
-              <h1 class="text-center fw-bold">Login</h1>
+              <h1 class="text-center fw-bold">Masukan Resep mu</h1>
             <div class="col-lg-6">
               <form>
                 <div class="mb-3">
-                  <label for="exampleInputEmail1" class="form-label">Email Anda</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                  <label for="exampleInputEmail1" class="form-label">Judul Resep</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Description</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" required>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Alat dan bahan</label>
+                  <input type="text" class="form-control" id="exampleInputPassword1" required>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" required>
+                  <input type="text" class="form-control" id="exampleInputPassword1" required>
                 </div>
                 <div class="mb-3">
                   <button type="submit" class="btn button-contact">Masuk</button>
