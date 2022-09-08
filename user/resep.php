@@ -35,11 +35,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link mx-2 " href="../index.php">Home</a>
-            <a class="nav-link mx-2" href="../index.php#about">About</a>
-            <a class="nav-link mx-2" href="../index.php#resep">Resep</a>
-            <a class="nav-link mx-2" href="../index.php#contact">Contact</a>
-            <a class="nav-link mx-2" href="../index.php#login">Login</a>
+            <a class="nav-link mx-2 " href="dashboard.php">Home</a>
+            <a class="nav-link mx-2" href="dashboard.php#about">About</a>
+            <a class="nav-link mx-2" href="dashboard.php#resep">Resep</a>
+            <a class="nav-link mx-2" href="dashboard.php#contact">Contact</a>
+            <a class="nav-link mx-2" href="logout.php">Logout</a>
           </div>    
         </div>     
       </div>

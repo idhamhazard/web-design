@@ -305,7 +305,8 @@ include 'functions/functions.php';
                   }
                 ?>
                   <form action="index.php" method="post">
-                  <?php if(isset($success)): ?> <div id="success">Berhasil Mendaftar. Silahkan <a href="index.php">Login</a></div> <?php endif; ?>
+                  <?php if(isset($success)){ ?> 
+                    <script>alert'BERHASIL MENAMBAHKAN USERNAME SILAHKAN LOGIN'; window.location='index.php#login';</script> <?php } ?>
                     <div class="mb-3">
                       <label class="form-label">Nama</label>
                       <input type="text" class="form-control" name="username" required>

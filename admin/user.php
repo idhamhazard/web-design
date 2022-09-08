@@ -140,45 +140,30 @@
                                             <th>Bulan</th>
                                             <th>Tahun</th>
                                             <th>Kata Sandi</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th style="width: 5px;">No</th>
-                                            <th>Nama</th>
-                                            <th>Email</th>
-                                            <th>Tanggal</th>
-                                            <th>Bulan</th>
-                                            <th>Tahun</th>
-                                            <th>Password</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
+                                        <?php
+                                        $no = 1;
+                                        include '../functions/adminfunctions.php';
+                                        $function = new adminFunction();
+                                        $read = $function->readUser();
+                                        while($data = $read->fetch_assoc()) {
+                                        ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Ujang Ahmad</td>
-                                            <td>ujangahmad@gmail.com@gmail.com</td>
-                                            <td>18</td>
-                                            <td>1</td>
-                                            <td>2007</td>
-                                            <td>1234</td>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $data['username'] ?></td>
+                                            <td><?= $data['email'] ?></td>
+                                            <td><?= $data['tanggal'] ?></td>
+                                            <td><?= $data['bulan'] ?></td>
+                                            <td><?= $data['tahun'] ?></td>
+                                            <td><?= $data['password'] ?></td>
+                                            <td>
+                                                <a href="proses.php?action=del-user&id=<?= $data['id'] ?>">Delete</a> || <a href="#">Edit</a>
+                                            </td>
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                            <td>2011/07/25</td>
-                                            <td>$170,750</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                            <td>2009/01/12</td>
-                                            <td>$86,000</td>
-                                        </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
