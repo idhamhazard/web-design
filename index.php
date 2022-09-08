@@ -138,7 +138,7 @@ include 'functions/functions.php';
               <div class="card-body">
                 <h5 class="card-title"><?= $data['judul'] ?></h5>
                 <p class="card-text"><?= $data['description'] ?></p>
-                <a href="pages/kategori.php" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <a href="pages/kategori.php?pulau=<?= $data['slug'] ?>" class="btn button-contact">Lihat Lebih Lanjut</a>
               </div>
             </div>
           </div>

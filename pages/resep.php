@@ -47,28 +47,45 @@
     <!-- Akhir Navbar -->
 
     <!-- Resep Kategori -->
+    
     <section>
+   
       <div class="container">
+    
         <div class="row">
           <div class="col-12 mb-3 mt-3">
             <div class="card mb-3">
-              <img src="../assets/img/coto-makassar.jpeg" class="card-img-top" alt="...">
+              <?php
+                include '../functions/functions.php';
+                $function = new allFunction();
+                if(isset($_GET['resep']))
+                {
+                    $product_slug = $_GET['resep'];
+                    $product_data = $function->viewResep($product_slug);
+                    $product = mysqli_fetch_array($product_data);
+                    if($product) {  
+              ?>
+              <img src="../assets/upload/<?= $product['foto'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h3 class="card-title">Coto Makassar</h3>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h3 class="card-title"><?= $product['judul'] ?></h3>
+                <p class="card-text"><?= $product['description'] ?></p>
                 <div class="isi">
                   <h4>Alat dan Bahan</h4>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat exercitationem est tempora?</p>
+                  <p><?= $product['alat'] ?></p>
                 </div>
                 <div class="langkah-langkah">
                   <h4>Langkah-Langkah</h4>
+                  <p><?= $product['langkah'] ?></p>
                 </div>
               </div>
             </div>
+            <?php } ?>
+            <?php } ?>
           </div>
         </div>
       </div>
     </section>
+    
     <!-- Akhir Resep Kategori -->
 
 

@@ -1,3 +1,8 @@
+<?php 
+session_start();
+include '../functions/userfunctions.php';
+$id_user = $_SESSION['id_user'];
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -54,41 +59,48 @@
             <div class="row justify-content-center">
               <h1 class="text-center fw-bold mb-3">Masukan Resep mu</h1>
             <div class="col-lg-6">
-              <form>
+              <form action="proses.php?action=create" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id_user" value="<?= $id_user ?>">
                 <div class="row mb-3">
                   <div class="col">
                   <label for="judul resep" class="form-label">Judul Resep</label>
-                    <input type="text" class="form-control" aria-label="judul resep">
+                    <input type="text" class="form-control" aria-label="judul resep" name="judul">
                   </div>
                   <div class="col">
-                  <label for="slag" class="form-label">Slag</label>
-                    <input type="text" class="form-control" aria-label="slag">
+                  <label for="slag" class="form-label">Slug</label>
+                    <input type="text" class="form-control" aria-label="slag" name="slug">
                   </div>
                 </div>
                 <div class="mb-3">
-                  <select class="form-select" aria-label="Default select example">
+                  <select class="form-select" aria-label="Default select example" name="category">
                     <option selected>Pilih Daerah</option>
-                    <option value="1"></option>
+                    <?php 
+                      $function = new userFunction();
+                      $read = $function->readCategory();
+                      while($data = $read->fetch_assoc()) {;
+                    ?>
+                    <option value="<?= $data['id'] ?>"><?= $data['judul'] ?></option>
+                    <?php } ?>
                  </select>
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Deskripsi Resep</label>
-                  <input type="text" class="form-control" id="exampleInputPassword1" required>
+                  <input type="text" class="form-control" id="exampleInputPassword1" name="deskripsi" required>
                 </div>
                 <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Alat dan Bahan</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="alat"></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">Langkah - Langkah</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="langkah"></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="formFile" class="form-label">Masukan Gambar</label>
-                  <input class="form-control" type="file" id="formFile">
+                  <input class="form-control" type="file" id="formFile" name="foto">
                 </div>
                 <div class="mb-3">
-                  <button type="submit" class="btn button-contact">Masuk</button>
+                  <button type="submit" class="btn button-contact" name="submit">Masuk</button>
                 </div>
                 </form>
         </div>

@@ -1,3 +1,6 @@
+<?php 
+include '../functions/userfunctions.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,22 +50,38 @@
     <!-- Akhir Navbar -->
 
     <!-- Resep Kategori -->
+    <?php
+      $function = new userFunction();
+      if(isset($_GET['pulau']))
+      {
+          $category_slug = $_GET['pulau'];
+          $category_data = $function->getSLugActive($category_slug);
+          $category = mysqli_fetch_array($category_data);
+  
+          if($category) {
+              $category_id = $category['id'];        
+              $products = $function->getResepByCat($category_id);
+              while($data = mysqli_fetch_array($products)) { 
+    ?>
     <section>
       <div class="container">
         <div class="row">
           <div class="col-lg-4 costum-kategori mb-3 mt-3">
             <div class="card" style="width: 18rem;">
-              <img src="../assets/img/papeda.jpeg" class="card-img-top" alt="...">
+              <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Papeda</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="resep.php" class="btn button-contact">Klik Lebih Lanjut</a>
+                <h5 class="card-title"> <?= $data['judul'] ?></h5>
+                <p class="card-text"> <?= $data['description'] ?></p>
+                <a href="resep.php?resep=<?= $data['slug'] ?>" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <?php } ?> 
     </section>
+    <?php } ?> 
+    <?php } ?>
     <!-- Akhir Resep Kategori -->
 
 
