@@ -123,6 +123,7 @@ include '../functions/userfunctions.php'
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,64L48,58.7C96,53,192,43,288,80C384,117,480,203,576,197.3C672,192,768,96,864,64C960,32,1056,64,1152,80C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <div>
     </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,256L48,245.3C96,235,192,213,288,186.7C384,160,480,128,576,149.3C672,171,768,245,864,261.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
     <!-- Akhir About -->
 
     <!-- Resep -->
@@ -148,6 +149,7 @@ include '../functions/userfunctions.php'
         </div>
       </div>
     </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,96L48,85.3C96,75,192,53,288,69.3C384,85,480,139,576,138.7C672,139,768,85,864,74.7C960,64,1056,96,1152,106.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <!-- Akhir Resep -->
 
     <!-- Contact  -->
@@ -189,7 +191,7 @@ include '../functions/userfunctions.php'
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 offset-lg-1 form-contact order-sm-3" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
+            <div class="col-lg-6 offset-lg-1 form-contact order-sm-3 pertanyaan" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
               <h2 class="text-center pt-2 fw-bold">Ada Pertanyaan...?</h2>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label"></label>
@@ -207,7 +209,6 @@ include '../functions/userfunctions.php'
         </div>
       </div>
     </section>
-  
     <!-- Akhir Contact -->
 
     <!-- Footer -->
@@ -235,10 +236,9 @@ include '../functions/userfunctions.php'
               <p>Forums</p>
             </div>
           </div>
-          <hr>
           <div class="row">
             <div class="col-12">
-              <p class="text-center">Build By <i class="bi bi-heart-fill"></i> SMK Cyber Media</p>
+              <p class="text-center copyright">Copyright © Resep Makananku 2022</p>
             </div>
           </div>
         </div>
@@ -258,6 +258,11 @@ include '../functions/userfunctions.php'
       });
     </script>
 
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
   </body>
 
   <!-- Link JS -->

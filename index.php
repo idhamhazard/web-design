@@ -407,6 +407,11 @@ include 'functions/functions.php';
       });
     </script>
 
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
   </body>
 
   <!-- Link JS -->
