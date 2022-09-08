@@ -50,7 +50,7 @@ include '../functions/userfunctions.php'
        </div>
     </nav>
     <!-- Akhir Navbar -->
-
+    
     <!-- Carousel -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
       <div class="carousel-indicators">
@@ -267,7 +267,7 @@ include '../functions/userfunctions.php'
   <script src="../assets/typed.js/typed.min.js"></script>
   <script>
     var typed = new Typed('.auto-input', {
-      strings: [" Tutorial Resep Makanan"],
+      strings: [" Welcome <?= $_SESSION['user_login'] ?> "],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
