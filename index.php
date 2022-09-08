@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
 ob_start();
 session_start();
 include 'functions/functions.php';
@@ -137,7 +138,7 @@ include 'functions/functions.php';
               <div class="card-body">
                 <h5 class="card-title"><?= $data['judul'] ?></h5>
                 <p class="card-text"><?= $data['description'] ?></p>
-                <a href="pages/kategori.php" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <a href="pages/kategori.php?pulau=<?= $data['slug'] ?>" class="btn button-contact">Lihat Lebih Lanjut</a>
               </div>
             </div>
           </div>
@@ -187,21 +188,32 @@ include 'functions/functions.php';
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 offset-lg-1 form-contact" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
-              <div class="costum-pertanyaan">
-                <h2 class="text-center pt-2">Ada Pertanyaan...?</h2>
-                <div class="mb-3">
-                  <label for="exampleFormControlInput1" class="form-label"></label>
-                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukan email anda disini...">
-                </div>
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label"></label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pertanyaan Anda..."></textarea>
-                </div>
+            <div class="col-lg-6 offset-lg-1 form-contact order-sm-3" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
+              <h2 class="text-center pt-2 fw-bold">Ada Pertanyaan...?</h2>
+              <?php
+                if(isset($_POST['kirim'])) 
+                {
+                  $email = $_POST['email'];
+                  $box = $_POST['box'];
+                  if($box) {
+                    $function = new allFunction();
+                    $create = $function->createQuestion($email, $box);
+                  }        
+                }
+              ?>
+              <form action="index.php" method="post">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"></label>
+                <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="Masukan email anda disini...">
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"></label>
+                <textarea class="form-control" name="box" id="exampleFormControlTextarea1" rows="3" placeholder="Pertanyaan Anda..."></textarea>
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn mb-3 button-contact">Kirim</button>
+                <button type="submit" class="btn mb-3 button-contact" value="kirim" name="kirim">Kirim</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -217,22 +229,22 @@ include 'functions/functions.php';
           <h1 class="text-center">Login</h1>
         <div class="col-lg-6">
           <?php
-          include 'config/configpdo.php';
-          if(isset($_SESSION['user_login'])) { header("location: user/dashboard.php");}
-          if(isset($_POST['login'])) {
-            $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
-            $pass = !empty($_POST['pass']) ? trim($_POST['pass']) : null;
-            $query = $conn->prepare("SELECT * FROM user WHERE email = :email");
-            $query->bindParam(":email", $email);
-            $query->execute();
-            $user = $query->fetch(PDO::FETCH_OBJ);
-            $valid = password_verify($pass, $user->password);
-            if($valid) {
-              $_SESSION['id_user'] = $user->id;
-              $_SESSION['user_login'] = $user->username;
-              header("location:user/dashboard.php");
+            include 'config/configpdo.php';
+            if(isset($_SESSION['user_login'])) { header("location: user/dashboard.php");}
+            if(isset($_POST['login'])) {
+                $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
+                $pass = !empty($_POST['pass']) ? trim($_POST['pass']) : null;
+                $query = $conn->prepare("SELECT * FROM user WHERE email = :email");
+                $query->bindParam(":email", $email);
+                $query->execute();
+                $user = $query->fetch(PDO::FETCH_OBJ);
+                $valid = password_verify($pass, $user->password);
+                if($valid) {
+                  $_SESSION['id_user'] = $user->id;
+                  $_SESSION['user_login'] = $user->username;
+                  header("location:user/dashboard.php");
+                }
             }
-          }
           ?>
           <form action="index.php" method="post">
             <div class="mb-3">
@@ -264,34 +276,37 @@ include 'functions/functions.php';
                 </div>
                 <div class="modal-body">
                 <?php
-                include 'config/configpdo.php';
-                if(isset($_POST['register'])) {
-                  $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
-                  $password = !empty($_POST['password']) ? trim($_POST['password']) : null;
-                  $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
-                  $tanggal = !empty($_POST['tanggal']) ? trim($_POST['tanggal']) : null;
-                  $bulan = !empty($_POST['bulan']) ? trim($_POST['bulan']) : null;
-                  $tahun = !empty($_POST['tahun']) ? trim($_POST['tahun']) : null;
-                  $query = $conn->prepare("SELECT COUNT(email) AS num FROM user WHERE email = :email");
+                  include 'config/configpdo.php';
+                  if(isset($_POST['register'])) {
+                    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+                    $password = !empty($_POST['password']) ? trim($_POST['password']) : null;
+                    $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
+                    $tanggal = !empty($_POST['tanggal']) ? trim($_POST['tanggal']) : null;
+                    $bulan = !empty($_POST['bulan']) ? trim($_POST['bulan']) : null;
+                    $tahun = !empty($_POST['tahun']) ? trim($_POST['tahun']) : null;
+                    $query = $conn->prepare("SELECT COUNT(email) AS num FROM user WHERE email = :email");
+                    $query->bindParam(":email", $email);
+                    $query->execute();
+                    $row = $query->fetch(PDO::FETCH_OBJ);
+
+                  if($row->num > 0) { die("<script>alert('Alamat email telah terdaftar!');window.location='index.php';</script>");}
+                  
+                  $hash = password_hash($password, PASSWORD_DEFAULT);
+                  $query = $conn->prepare("INSERT INTO user (username, password, email, tanggal, bulan, tahun) 
+                  VALUES(:username, :password, :email, :tanggal, :bulan, :tahun)");
+                  $query->bindParam(":username", $username);
+                  $query->bindParam(":password", $hash);
                   $query->bindParam(":email", $email);
+                  $query->bindParam(":tanggal", $tanggal);
+                  $query->bindParam(":bulan", $bulan);
+                  $query->bindParam(":tahun", $tahun);
                   $query->execute();
-                  $row = $query->fetch(PDO::FETCH_OBJ);
-                 if($row->num > 0) { die("<script>alert('Alamat email telah terdaftar!');window.location='index.php';</script>");}
-                 $hash = password_hash($password, PASSWORD_DEFAULT);
-                 $query = $conn->prepare("INSERT INTO user (username, password, email, tanggal, bulan, tahun) 
-                 VALUES(:username, :password, :email, :tanggal, :bulan, :tahun)");
-                 $query->bindParam(":username", $username);
-                 $query->bindParam(":password", $hash);
-                 $query->bindParam(":email", $email);
-                 $query->bindParam(":tanggal", $tanggal);
-                 $query->bindParam(":bulan", $bulan);
-                 $query->bindParam(":tahun", $tahun);
-                 $query->execute();
-                 if($query) { $success = true; }
-                }
+                  if($query) { $success = true; }
+                  }
                 ?>
                   <form action="index.php" method="post">
-                  <?php if(isset($success)): ?> <div id="success">Berhasil Mendaftar. Silahkan <a href="index.php">Login</a></div> <?php endif; ?>
+                  <?php if(isset($success)){ ?> 
+                    <script>alert'BERHASIL MENAMBAHKAN USERNAME SILAHKAN LOGIN'; window.location='index.php#login';</script> <?php } ?>
                     <div class="mb-3">
                       <label class="form-label">Nama</label>
                       <input type="text" class="form-control" name="username" required>

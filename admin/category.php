@@ -135,39 +135,32 @@
                                             <th style="width: 5px;">No</th>
                                             <th>Judul</th>
                                             <th>Deskripsi</th>
-                                            <th>Slag</th>
+                                            <th>Slug</th>
                                             <th>Kategori</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                        <th style="width: 5px;">No</th>
-                                            <th>Judul</th>
-                                            <th>Deskripsi</th>
-                                            <th>Slag</th>
-                                            <th>Kategori</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
+                                    <?php
+                                    $no = 1;
+                                    include '../functions/adminfunctions.php';
+                                    $function = new adminFunction();
+                                    $read = $function->readCategory();
+                                    while($data = $read->fetch_assoc()) {
+                                    ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Ujang Ahmad</td>
-                                            <td>ujangahmad@gmail.com@gmail.com</td>
-                                            <td>18</td>
-                                            <td>1</td>
+                                            <td><?= $no++ ?></td>
+                                            <td><?= $data['judul'] ?></td>
+                                            <td><?= $data['description'] ?></td>
+                                            <td><?= $data['slug'] ?></td>
+                                            <td><img src="../assets/upload/<?= $data['foto'] ?>" alt="" height="100px" width="100px"></td>
+                                            <td>
+                                                <a href="proses.php?action=delete&id=<?= $data['id'] ?>">Delete</a> ||
+                                                <a href="edit.php?id=<?= $data['id'] ?>">Edit</a>
+                                            </td>
+                                            
                                         </tr>
-                                        <tr>
-                                            <td>Garrett Winters</td>
-                                            <td>Accountant</td>
-                                            <td>Tokyo</td>
-                                            <td>63</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ashton Cox</td>
-                                            <td>Junior Technical Author</td>
-                                            <td>San Francisco</td>
-                                            <td>66</td>
-                                        </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>

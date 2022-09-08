@@ -30,6 +30,7 @@ nav {
 /* About */
 .welcome {
   color: black;
+  margin-right: 130px;
 }
 
 .carousel-item img {

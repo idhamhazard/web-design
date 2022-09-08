@@ -2,6 +2,7 @@
 include '../functions/adminfunctions.php';
 $action = $_GET['action'];
 
+
 if($action == "create")
 {
     $judul = $_POST['judul'];
@@ -17,4 +18,25 @@ if($action == "create")
         $library->inputCategory($judul,$desc,$slug,$nama_foto);
         header("location:inputcat.php");
     }
+}
+
+if($action == "delete") 
+{
+    $function = new adminFunction();
+    $delete = $function->deleteCategory($_GET['id']);
+    header("location:category.php");
+}
+
+if($action == "del-user") 
+{
+    $function = new adminFunction();
+    $delete = $function->deleteUser($_GET['id']);
+    header("location:user.php");
+}
+
+if($action == "del-resep") 
+{
+    $function = new adminFunction();
+    $delete = $function->deleteResep($_GET['id']);
+    header("location:resep.php");
 }

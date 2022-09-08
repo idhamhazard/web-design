@@ -1,6 +1,3 @@
-<?php 
-include '../functions/functions.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +11,7 @@ include '../functions/functions.php';
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/kategori.css" />
 
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
@@ -37,11 +35,11 @@ include '../functions/functions.php';
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link mx-2 " href="../index.php">Home</a>
-            <a class="nav-link mx-2" href="../index.php#about">About</a>
-            <a class="nav-link mx-2" href="../index.php#resep">Resep</a>
-            <a class="nav-link mx-2" href="../index.php#contact">Contact</a>
-            <a class="nav-link mx-2" href="../index.php#login">Login</a>
+            <a class="nav-link mx-2 " href="dashboard.php">Home</a>
+            <a class="nav-link mx-2" href="dashboard.php#about">About</a>
+            <a class="nav-link mx-2" href="dashboard.php#resep">Resep</a>
+            <a class="nav-link mx-2" href="dashboard.php#contact">Contact</a>
+            <a class="nav-link mx-2" href="logout.php">Logout</a>
           </div>    
         </div>     
       </div>
@@ -49,38 +47,45 @@ include '../functions/functions.php';
     <!-- Akhir Navbar -->
 
     <!-- Resep Kategori -->
-    <?php
-      $function = new allFunction();
-      if(isset($_GET['pulau']))
-      {
-          $category_slug = $_GET['pulau'];
-          $category_data = $function->getSLugActive($category_slug);
-          $category = mysqli_fetch_array($category_data);
-  
-          if($category) {
-              $category_id = $category['id'];        
-              $products = $function->getResepByCat($category_id);
-              while($data = mysqli_fetch_array($products)) { 
-    ?>
+    
     <section>
+   
       <div class="container">
+    
         <div class="row">
-          <div class="col-lg-4 costum-kategori mb-3 mt-3">
-            <div class="card" style="width: 18rem;">
-              <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="...">
+          <div class="col-12 mb-3 mt-3">
+            <div class="card mb-3">
+              <?php
+                include '../functions/userfunctions.php';
+                $function = new userFunction();
+                if(isset($_GET['resep']))
+                {
+                    $product_slug = $_GET['resep'];
+                    $product_data = $function->viewResep($product_slug);
+                    $product = mysqli_fetch_array($product_data);
+                    if($product) {  
+              ?>
+              <img src="../assets/upload/<?= $product['foto'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title"> <?= $data['judul'] ?></h5>
-                <p class="card-text"> <?= $data['description'] ?></p>
-                <a href="resep.php?resep=<?= $data['slug'] ?>" class="btn button-contact">Klik Lebih Lanjut</a>
+                <h3 class="card-title"><?= $product['judul'] ?></h3>
+                <p class="card-text"><?= $product['description'] ?></p>
+                <div class="isi">
+                  <h4>Alat dan Bahan</h4>
+                  <p><?= $product['alat'] ?></p>
+                </div>
+                <div class="langkah-langkah">
+                  <h4>Langkah-Langkah</h4>
+                  <p><?= $product['langkah'] ?></p>
+                </div>
               </div>
             </div>
+            <?php } ?>
+            <?php } ?>
           </div>
         </div>
       </div>
-      <?php } ?> 
     </section>
-    <?php } ?> 
-    <?php } ?>
+    
     <!-- Akhir Resep Kategori -->
 
 
@@ -118,7 +123,6 @@ include '../functions/functions.php';
          </div>
        </div>
      </footer>
-       
      <!-- Akhir Footer -->
 
   </body>
