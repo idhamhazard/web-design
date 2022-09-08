@@ -103,7 +103,7 @@ include 'functions/functions.php';
       <div class="container">
         <div class="row mt-5">
           <div class="col-lg-7 col-sm-12 text-center kata-resep">
-            <h1 class="fw-bolder welcome text-center" data-aos="fade-down" data-aos-delay="100"
+            <h1 class=" welcome text-center" data-aos="fade-down" data-aos-delay="100"
             >Selamat Datang di <br><span class="kata-merah">RESEPMAKANANKU</span></h1>
             <p class="lead fs-6 text-lg-start p-resep p1-resep fw-bold" data-aos="fade-right" data-aos-delay="300">ResepMakananku adalah no 1 situs langganan resep masakan yang memiliki informasi terlengkap mengenai segala hal tentang dunia masak-memasak. Mulai dari resep, tips & edukasi, produk rekomendasi, dll.
             </p>
