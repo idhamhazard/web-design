@@ -14,7 +14,7 @@ include 'functions/functions.php';
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
@@ -154,10 +154,10 @@ include 'functions/functions.php';
       <div class="container-fluid costum-contact">
         <div class="container p-5 contact-costum">
           <div class="row">
-            <div class="col-lg-5 col-md-6 order-0">
+            <div class="col-lg-5 col-md-6">
               <div class="judul-kontak" data-aos="fade-down">
-                <h1 class="contact-me fw-bold">Contact Me</h1>
-                <h2 class="fw-bold">Silahkan kontak kami. <br> Kami siap membantu</h2>
+                <h1 class="contact-me">Contact Me</h1>
+                <h2>Silahkan kontak kami. <br> Kami siap membantu</h2>
               </div> 
               <div class="kontak" data-aos="fade-right" data-aos-delay="200">
                 <h5>Kontak</h5>
@@ -226,7 +226,7 @@ include 'functions/functions.php';
     <section id="login">
       <div class="container" data-aos="fade-down">
         <div class="row justify-content-center">
-          <h1 class="text-center fw-bold">Login</h1>
+          <h1 class="text-center">Login</h1>
         <div class="col-lg-6">
           <?php
             include 'config/configpdo.php';

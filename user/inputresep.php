@@ -57,7 +57,7 @@ $id_user = $_SESSION['id_user'];
         <div class="col-12">
           <div class="container" data-aos="fade-down">
             <div class="row justify-content-center">
-              <h1 class="text-center fw-bold mb-3">Masukan Resep mu</h1>
+              <h1 class="text-center mb-5">Masukan Resep mu</h1>
             <div class="col-lg-6">
               <form action="proses.php?action=create" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id_user" value="<?= $id_user ?>">

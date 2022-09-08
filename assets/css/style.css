@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 
 html {
   scroll-behavior: smooth;
 }
 * {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
 }
 
@@ -37,6 +38,10 @@ nav {
 
 .kata-merah {
   color: #850e35;
+}
+
+.welcome {
+  color: black;
 }
 
 /* Form Contact */
@@ -161,6 +166,10 @@ nav {
     display: flex;
     justify-content: center;
   }
+
+  .form-contact {
+    margin-top: 10px;
+  }
 }
 
 /* Tablet Version */
@@ -213,6 +222,24 @@ nav {
 
   .p1-resep {
     margin-top: 5%;
+  }
+
+  #login {
+    padding-top: 80px;
+  }
+
+  #about {
+    padding-top: 50px;
+  }
+
+  #resep {
+    padding-top: 60px;
+  }
+
+ 
+  #contact .costum-contact {
+  background: rgba(0, 0, 0, 0.75);
+  padding-top: 50px;
   }
 }
 
