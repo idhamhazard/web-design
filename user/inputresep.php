@@ -52,7 +52,7 @@
         <div class="col-12">
           <div class="container" data-aos="fade-down">
             <div class="row justify-content-center">
-              <h1 class="text-center fw-bold mb-3">Masukan Resep mu</h1>
+              <h1 class="text-center mb-5">Masukan Resep mu</h1>
             <div class="col-lg-6">
               <form>
                 <div class="row mb-3">
@@ -68,7 +68,7 @@
                 <div class="mb-3">
                   <select class="form-select" aria-label="Default select example">
                     <option selected>Pilih Daerah</option>
-                    <option value="1"></option>
+                    <option value="1">jg</option>
                  </select>
                 </div>
                 <div class="mb-3">

@@ -11,7 +11,6 @@
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/kategori.css" />
 
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
@@ -54,7 +53,7 @@
             <div class="card" style="width: 18rem;">
               <img src="../assets/img/papeda.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title">Papeda</h5>
+                <h5 class="card-title fw-bold">Papeda</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="resep.php" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>

@@ -100,11 +100,11 @@
            </div>
          </div>
          <div class="row">
-           <div class="col-12">
-             <p class="text-center copyright p-3">Copyright ©️ Resep Makananku 2022</p>
-           </div>
+          <div class="col-12">
+          <p class="text-center copyright p-3">Copyright ©️ Resep Makananku 2022</p>
+          </div>
          </div>
-       </div>
+        </div>
      </footer>
      <!-- Akhir Footer -->
 
