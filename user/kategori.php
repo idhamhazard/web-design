@@ -14,7 +14,6 @@ include '../functions/userfunctions.php';
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/kategori.css" />
 
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
@@ -66,7 +65,7 @@ include '../functions/userfunctions.php';
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 costum-kategori mb-3 mt-3 justify-content-center">
+          <div class="col-sm-12 col-md-12 costum-kategori mb-3 mt-3 col-xl-4">
             <div class="card" style="width: 18rem;">
               <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
