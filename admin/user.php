@@ -14,6 +14,9 @@
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
 
+    <!-- Link Icon Bootsrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
     <!-- Custom fonts for this template -->
     <link href="../vendor/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -39,7 +42,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="bi bi-egg-fried"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Resep Makananku</div>
             </a>
@@ -50,7 +53,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="dashboard.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="bi bi-house-door-fill"></i>
                     <span>Home</span></a>
             </li>
 
@@ -59,14 +62,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Menu
             </div>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                        <i class="bi bi-clipboard2-data-fill"></i>
                     <span>Data</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -159,8 +162,8 @@
                                             <td><?= $data['bulan'] ?></td>
                                             <td><?= $data['tahun'] ?></td>
                                             <td><?= $data['password'] ?></td>
-                                            <td>
-                                                <a href="proses.php?action=del-user&id=<?= $data['id'] ?>">Delete</a> || <a href="#">Edit</a>
+                                            <td class="d-flex">
+                                                <a class="btn btn-primary mx-2" href="proses.php?action=del-user&id=<?= $data['id'] ?>">Hapus</a> <a class="btn btn-primary" href="#">Edit</a>
                                             </td>
                                         </tr>
                                         <?php } ?>

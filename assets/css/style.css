@@ -4,8 +4,9 @@
 html {
   scroll-behavior: smooth;
 }
+
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
@@ -96,9 +97,17 @@ nav {
   margin-top: -5px;
 }
 
+.paragraf-sosmed a {
+  margin-top: -40px !important;
+}
+
 .icon-sosial-media a {
   color: #fff;
   text-decoration: none;
+}
+
+.contact-costum p {
+  margin-top: -4px;
 }
 
 /* Login */
@@ -110,6 +119,7 @@ nav {
 .button-kirim {
   width: 100%;
 }
+
 /* Footer */
 .costum-footer {
   color: #fff;
@@ -187,8 +197,17 @@ nav {
   .p1-resep {
     margin-top: 5%;
   }
+
+  .form-contact {
+    margin-top: 10px;
+  }
 }
 
+/* Admin */
+.costum-popup-admin {
+  margin-right: 860px;
+  margin-bottom: 10px;
+}
 /* Desktop Version */
 @media only screen and (min-width: 990px) {
   .carousel-item img {
@@ -209,9 +228,9 @@ nav {
   }
 
   .judul {
-    font-size: 50px;
-    top: -270px;
-    left: 15%;
+    font-size: 45px;
+    top: -50vh;
+    left: 17%;
   }
 
   .kata-resep {
@@ -236,12 +255,6 @@ nav {
 
   #resep {
     padding-top: 60px;
-  }
-
- 
-  #contact .costum-contact {
-  background: rgba(0, 0, 0, 0.75);
-  padding-top: 50px;
   }
 }
 

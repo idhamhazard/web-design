@@ -60,7 +60,7 @@ include 'functions/functions.php';
           <img src="assets/img/soto.webp" class="d-block w-100 soto" alt="gambar soto betawi" />
           <div class="carousel-caption d-none d-md-block">
             <div class="text-box">
-              <h1 class="judul position-absolute"><span class="auto-input"></span></h1>
+              <h6 class="judul position-absolute"><span class="auto-input"></span></h6>
             </div>
             <h5 class="fw-bold">Soto Betawi</h5>
             <p class="">
@@ -157,7 +157,7 @@ include 'functions/functions.php';
             <div class="col-lg-5 col-md-6">
               <div class="judul-kontak" data-aos="fade-down">
                 <h1 class="contact-me">Contact Me</h1>
-                <h2>Silahkan kontak kami. <br> Kami siap membantu</h2>
+                <h3>Silahkan kontak kami. <br> Kami siap membantu</h3>
               </div> 
               <div class="kontak" data-aos="fade-right" data-aos-delay="200">
                 <h5>Kontak</h5>
@@ -178,18 +178,18 @@ include 'functions/functions.php';
                   <div class="icon-sosial-media">
                     <div class="instagram d-flex mb-1">
                       <i class="bi bi-instagram"></i>
-                      <a href="https://www.instagram.com/smkcybermediajakarta" target="_blank" class="ms-2 ">@smkcybermediajakarta</a>
+                      <a href="https://www.instagram.com/smkcybermediajakarta" target="_blank" class="ms-2" >@smkcybermediajakarta</a>
                     </div>
                     <div class="yt d-flex">
                       <i class="bi bi-youtube"></i>
-                      <a href="https://www.youtube.com/channel/UCPm6DPzgAM2AR1ixs2ghCvA" target="_blank" class="ms-2">YouTube SMK Cyber Media</a>
+                      <a href="https://www.youtube.com/channel/UCPm6DPzgAM2AR1ixs2ghCvA" target="_blank" class="ms-2 paragraf-sosmed">YouTube SMK Cyber Media</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 offset-lg-1 form-contact order-sm-3" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
-              <h2 class="text-center pt-2 fw-bold">Ada Pertanyaan...?</h2>
+              <h2 class="text-center pt-2">Ada Pertanyaan...?</h2>
               <?php
                 if(isset($_POST['kirim'])) 
                 {

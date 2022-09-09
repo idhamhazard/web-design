@@ -14,6 +14,13 @@
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />
 
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Link Icon Bootsrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
     <!-- Custom fonts for this template -->
     <link href="../vendor/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -39,7 +46,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="bi bi-egg-fried"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Resep Makananku</div>
             </a>
@@ -50,7 +57,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
                 <a class="nav-link" href="dashboard.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="bi bi-house-door-fill"></i>
                     <span>Home</span></a>
             </li>
 
@@ -59,14 +66,14 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Menu
             </div>
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                    <i class="bi bi-clipboard2-data-fill"></i>
                     <span>Data</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
@@ -122,13 +129,52 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Table User</h1>
 
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Berikut Table Data Kategori</h6>
                         </div>
                         <div class="card-body text-center">
-                            <div class="table-responsive">
+                       <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary costum-popup-admin" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Tambah
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Resep</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="col mb-3">
+                  <label for="judul resep" class="form-label">Judul Resep</label>
+                    <input type="text" class="form-control" aria-label="judul resep" name="judul">
+                  </div>
+                  <div class="col mb-3">
+                  <label for="deskripsi" class="form-label">Deskripsi</label>
+                    <input type="text" class="form-control" aria-label="deskripsi" name="deskripsi">
+                  </div>
+                  <div class="col mb-3">
+                  <label for="slag" class="form-label">Slug</label>
+                    <input type="text" class="form-control" aria-label="slag" name="slug">
+                  </div>
+                  <div class="col mb-3">
+                  <label for="gambar" class="form-label">Gambar</label>
+                    <input type="file" class="form-control" aria-label="gambar" name="gambar">
+                  </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="button" class="btn btn-primary">Kirim</button>
+      </div>
+    </div>
+  </div>
+</div>     
+<div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
@@ -155,8 +201,8 @@
                                             <td><?= $data['slug'] ?></td>
                                             <td><img src="../assets/upload/<?= $data['foto'] ?>" alt="" height="100px" width="100px"></td>
                                             <td>
-                                                <a href="proses.php?action=delete&id=<?= $data['id'] ?>">Delete</a> ||
-                                                <a href="edit.php?id=<?= $data['id'] ?>">Edit</a>
+                                                <a class="btn btn-primary" href="proses.php?action=delete&id=<?= $data['id'] ?>">Hapus</a> 
+                                                <a class="btn btn-primary" href="edit.php?id=<?= $data['id'] ?>">Edit</a>
                                             </td>
                                             
                                         </tr>
@@ -182,7 +228,6 @@
                 </div>
             </footer>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
 
@@ -232,5 +277,16 @@
     <script src="../vendor/js/demo/datatables-demo.js"></script>
 
 </body>
+<!-- Link JS -->
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/bootstrap/js/jquery-3.6.1.min.js"></script>
+   <script>
+    const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+   </script>
 
 </html>
