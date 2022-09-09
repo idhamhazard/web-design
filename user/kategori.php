@@ -66,7 +66,7 @@ include '../functions/userfunctions.php';
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 costum-kategori mb-3 mt-3">
+          <div class="col-lg-4 costum-kategori mb-3 mt-3 justify-content-center">
             <div class="card" style="width: 18rem;">
               <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
