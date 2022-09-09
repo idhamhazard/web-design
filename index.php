@@ -1,4 +1,5 @@
 <?php 
+error_reporting(0);
 ob_start();
 session_start();
 include 'functions/functions.php';
@@ -13,7 +14,7 @@ include 'functions/functions.php';
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
 
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png" />
@@ -59,7 +60,7 @@ include 'functions/functions.php';
           <img src="assets/img/soto.webp" class="d-block w-100 soto" alt="gambar soto betawi" />
           <div class="carousel-caption d-none d-md-block">
             <div class="text-box">
-              <h1 class="judul position-absolute"><span class="auto-input"></span></h1>
+              <h6 class="judul position-absolute"><span class="auto-input"></span></h6>
             </div>
             <h5 class="fw-bold">Soto Betawi</h5>
             <p class="">
@@ -103,7 +104,7 @@ include 'functions/functions.php';
       <div class="container">
         <div class="row mt-5">
           <div class="col-lg-7 col-sm-12 text-center kata-resep">
-            <h1 class="fw-bolder welcome text-center" data-aos="fade-down" data-aos-delay="100"
+            <h1 class=" welcome text-center" data-aos="fade-down" data-aos-delay="100"
             >Selamat Datang di <br><span class="kata-merah">RESEPMAKANANKU</span></h1>
             <p class="lead fs-6 text-lg-start p-resep p1-resep fw-bold" data-aos="fade-right" data-aos-delay="300">ResepMakananku adalah no 1 situs langganan resep masakan yang memiliki informasi terlengkap mengenai segala hal tentang dunia masak-memasak. Mulai dari resep, tips & edukasi, produk rekomendasi, dll.
             </p>
@@ -137,7 +138,7 @@ include 'functions/functions.php';
               <div class="card-body">
                 <h5 class="card-title"><?= $data['judul'] ?></h5>
                 <p class="card-text"><?= $data['description'] ?></p>
-                <a href="pages/kategori.php" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <a href="pages/kategori.php?pulau=<?= $data['slug'] ?>" class="btn button-contact">Lihat Lebih Lanjut</a>
               </div>
             </div>
           </div>
@@ -153,10 +154,10 @@ include 'functions/functions.php';
       <div class="container-fluid costum-contact">
         <div class="container p-5 contact-costum">
           <div class="row">
-            <div class="col-lg-5 col-md-6 order-0">
+            <div class="col-lg-5 col-md-6">
               <div class="judul-kontak" data-aos="fade-down">
-                <h1 class="contact-me fw-bold">Contact Me</h1>
-                <h2 class="fw-bold">Silahkan kontak kami. <br> Kami siap membantu</h2>
+                <h1 class="contact-me">Contact Me</h1>
+                <h3>Silahkan kontak kami. <br> Kami siap membantu</h3>
               </div> 
               <div class="kontak" data-aos="fade-right" data-aos-delay="200">
                 <h5>Kontak</h5>
@@ -177,29 +178,42 @@ include 'functions/functions.php';
                   <div class="icon-sosial-media">
                     <div class="instagram d-flex mb-1">
                       <i class="bi bi-instagram"></i>
-                      <a href="https://www.instagram.com/smkcybermediajakarta" target="_blank" class="ms-2 ">@smkcybermediajakarta</a>
+                      <a href="https://www.instagram.com/smkcybermediajakarta" target="_blank" class="ms-2" >@smkcybermediajakarta</a>
                     </div>
                     <div class="yt d-flex">
                       <i class="bi bi-youtube"></i>
-                      <a href="https://www.youtube.com/channel/UCPm6DPzgAM2AR1ixs2ghCvA" target="_blank" class="ms-2">YouTube SMK Cyber Media</a>
+                      <a href="https://www.youtube.com/channel/UCPm6DPzgAM2AR1ixs2ghCvA" target="_blank" class="ms-2 paragraf-sosmed">YouTube SMK Cyber Media</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 offset-lg-1 form-contact order-sm-3" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
-              <h2 class="text-center pt-2 fw-bold">Ada Pertanyaan...?</h2>
+              <h2 class="text-center pt-2">Ada Pertanyaan...?</h2>
+              <?php
+                if(isset($_POST['kirim'])) 
+                {
+                  $email = $_POST['email'];
+                  $box = $_POST['box'];
+                  if($box) {
+                    $function = new allFunction();
+                    $create = $function->createQuestion($email, $box);
+                  }        
+                }
+              ?>
+              <form action="index.php" method="post">
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label"></label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukan email anda disini...">
+                <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="Masukan email anda disini...">
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label"></label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pertanyaan Anda..."></textarea>
+                <textarea class="form-control" name="box" id="exampleFormControlTextarea1" rows="3" placeholder="Pertanyaan Anda..."></textarea>
               </div>
               <div class="col-auto">
-                <button type="submit" class="btn mb-3 button-contact">Kirim</button>
+                <button type="submit" class="btn mb-3 button-contact" value="kirim" name="kirim">Kirim</button>
               </div>
+              </form>
             </div>
           </div>
         </div>
@@ -212,30 +226,32 @@ include 'functions/functions.php';
     <section id="login">
       <div class="container" data-aos="fade-down">
         <div class="row justify-content-center">
-          <h1 class="text-center fw-bold">Login</h1>
+          <h1 class="text-center">Login</h1>
         <div class="col-lg-6">
           <?php
-          include 'config/configpdo.php';
-          if(isset($_SESSION['user_login'])) { header("location: user/dashboard.php");}
-          if(isset($_POST['login'])) {
-            $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
-            $pass = !empty($_POST['pass']) ? trim($_POST['pass']) : null;
-            $query = $conn->prepare("SELECT * FROM user WHERE email = :email");
-            $query->bindParam(":email", $email);
-            $query->execute();
-            $user = $query->fetch(PDO::FETCH_OBJ);
-            $valid = password_verify($pass, $user->password);
-            if($valid) {
-              $_SESSION['id_user'] = $user->id;
-              $_SESSION['user_login'] = $user->username;
-              header("location:user/dashboard.php");
+            include 'config/configpdo.php';
+            if(isset($_SESSION['user_login'])) { header("location: user/dashboard.php");}
+            if(isset($_SESSION['admin_login'])) { header("location: admin/dashboard.php");}
+            if(isset($_POST['login'])) {
+                $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+                $pass = !empty($_POST['pass']) ? trim($_POST['pass']) : null;
+                $query = $conn->prepare("SELECT * FROM user WHERE username = :username");
+                $query->bindParam(":username", $username);
+                $query->execute();
+                $user = $query->fetch(PDO::FETCH_OBJ);
+                $valid = password_verify($pass, $user->password);
+                if($valid) {
+                  $_SESSION['id_user'] = $user->id;
+                  $_SESSION['user_login'] = $user->username;
+                  header("location:user/dashboard.php");
+             
             }
           }
           ?>
           <form action="index.php" method="post">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email Anda</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
@@ -262,34 +278,37 @@ include 'functions/functions.php';
                 </div>
                 <div class="modal-body">
                 <?php
-                include 'config/configpdo.php';
-                if(isset($_POST['register'])) {
-                  $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
-                  $password = !empty($_POST['password']) ? trim($_POST['password']) : null;
-                  $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
-                  $tanggal = !empty($_POST['tanggal']) ? trim($_POST['tanggal']) : null;
-                  $bulan = !empty($_POST['bulan']) ? trim($_POST['bulan']) : null;
-                  $tahun = !empty($_POST['tahun']) ? trim($_POST['tahun']) : null;
-                  $query = $conn->prepare("SELECT COUNT(email) AS num FROM user WHERE email = :email");
+                  include 'config/configpdo.php';
+                  if(isset($_POST['register'])) {
+                    $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
+                    $password = !empty($_POST['password']) ? trim($_POST['password']) : null;
+                    $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
+                    $tanggal = !empty($_POST['tanggal']) ? trim($_POST['tanggal']) : null;
+                    $bulan = !empty($_POST['bulan']) ? trim($_POST['bulan']) : null;
+                    $tahun = !empty($_POST['tahun']) ? trim($_POST['tahun']) : null;
+                    $query = $conn->prepare("SELECT COUNT(email) AS num FROM user WHERE email = :email");
+                    $query->bindParam(":email", $email);
+                    $query->execute();
+                    $row = $query->fetch(PDO::FETCH_OBJ);
+
+                  if($row->num > 0) { die("<script>alert('Alamat email telah terdaftar!');window.location='index.php';</script>");}
+                  
+                  $hash = password_hash($password, PASSWORD_DEFAULT);
+                  $query = $conn->prepare("INSERT INTO user (username, password, email, tanggal, bulan, tahun) 
+                  VALUES(:username, :password, :email, :tanggal, :bulan, :tahun)");
+                  $query->bindParam(":username", $username);
+                  $query->bindParam(":password", $hash);
                   $query->bindParam(":email", $email);
+                  $query->bindParam(":tanggal", $tanggal);
+                  $query->bindParam(":bulan", $bulan);
+                  $query->bindParam(":tahun", $tahun);
                   $query->execute();
-                  $row = $query->fetch(PDO::FETCH_OBJ);
-                 if($row->num > 0) { die("<script>alert('Alamat email telah terdaftar!');window.location='index.php';</script>");}
-                 $hash = password_hash($password, PASSWORD_DEFAULT);
-                 $query = $conn->prepare("INSERT INTO user (username, password, email, tanggal, bulan, tahun) 
-                 VALUES(:username, :password, :email, :tanggal, :bulan, :tahun)");
-                 $query->bindParam(":username", $username);
-                 $query->bindParam(":password", $hash);
-                 $query->bindParam(":email", $email);
-                 $query->bindParam(":tanggal", $tanggal);
-                 $query->bindParam(":bulan", $bulan);
-                 $query->bindParam(":tahun", $tahun);
-                 $query->execute();
-                 if($query) { $success = true; }
-                }
+                  if($query) { $success = true; }
+                  }
                 ?>
                   <form action="index.php" method="post">
-                  <?php if(isset($success)): ?> <div id="success">Berhasil Mendaftar. Silahkan <a href="index.php">Login</a></div> <?php endif; ?>
+                  <?php if(isset($success)){ ?> 
+                    <script>alert'BERHASIL MENAMBAHKAN USERNAME SILAHKAN LOGIN'; window.location='index.php#login';</script> <?php } ?>
                     <div class="mb-3">
                       <label class="form-label">Nama</label>
                       <input type="text" class="form-control" name="username" required>
@@ -391,6 +410,11 @@ include 'functions/functions.php';
       });
     </script>
 
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
   </body>
 
   <!-- Link JS -->

@@ -1,10 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap");
 
 html {
   scroll-behavior: smooth;
 }
+
 * {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   box-sizing: border-box;
 }
 
@@ -29,6 +31,7 @@ nav {
 /* About */
 .welcome {
   color: black;
+  margin-right: 130px;
 }
 
 .carousel-item img {
@@ -37,6 +40,11 @@ nav {
 
 .kata-merah {
   color: #850e35;
+}
+
+.welcome {
+  color: black;
+  margin-right: 130px;
 }
 
 /* Form Contact */
@@ -89,9 +97,17 @@ nav {
   margin-top: -5px;
 }
 
+.paragraf-sosmed a {
+  margin-top: -40px !important;
+}
+
 .icon-sosial-media a {
   color: #fff;
   text-decoration: none;
+}
+
+.contact-costum p {
+  margin-top: -4px;
 }
 
 /* Login */
@@ -103,6 +119,7 @@ nav {
 .button-kirim {
   width: 100%;
 }
+
 /* Footer */
 .costum-footer {
   color: #fff;
@@ -161,6 +178,10 @@ nav {
     display: flex;
     justify-content: center;
   }
+
+  .form-contact {
+    margin-top: 10px;
+  }
 }
 
 /* Tablet Version */
@@ -176,8 +197,17 @@ nav {
   .p1-resep {
     margin-top: 5%;
   }
+
+  .form-contact {
+    margin-top: 10px;
+  }
 }
 
+/* Admin */
+.costum-popup-admin {
+  margin-right: 860px;
+  margin-bottom: 10px;
+}
 /* Desktop Version */
 @media only screen and (min-width: 990px) {
   .carousel-item img {
@@ -198,9 +228,9 @@ nav {
   }
 
   .judul {
-    font-size: 50px;
-    top: -270px;
-    left: 15%;
+    font-size: 45px;
+    top: -50vh;
+    left: 17%;
   }
 
   .kata-resep {
@@ -213,6 +243,18 @@ nav {
 
   .p1-resep {
     margin-top: 5%;
+  }
+
+  #login {
+    padding-top: 80px;
+  }
+
+  #about {
+    padding-top: 50px;
+  }
+
+  #resep {
+    padding-top: 60px;
   }
 }
 

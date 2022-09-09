@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(!isset($_SESSION['user_login'])) { header("location:../index.php");}
+if(!isset($_SESSION['user_login'])) { header("location:../index.php#login");}
 include '../functions/userfunctions.php'
 ?>
 
@@ -50,7 +50,7 @@ include '../functions/userfunctions.php'
        </div>
     </nav>
     <!-- Akhir Navbar -->
-
+    
     <!-- Carousel -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
       <div class="carousel-indicators">
@@ -107,7 +107,7 @@ include '../functions/userfunctions.php'
       <div class="container">
         <div class="row mt-5">
           <div class="col-lg-7 col-sm-12 text-center kata-resep">
-            <h1 class="fw-bolder welcome text-center" data-aos="fade-down" data-aos-delay="100"
+            <h1 class="welcome text-center" data-aos="fade-down" data-aos-delay="100"
             >Selamat Datang di <br><span class="kata-merah">RESEPMAKANANKU</span></h1>
             <p class="lead fs-6 text-lg-start p-resep p1-resep fw-bold" data-aos="fade-right" data-aos-delay="300">ResepMakananku adalah no 1 situs langganan resep masakan yang memiliki informasi terlengkap mengenai segala hal tentang dunia masak-memasak. Mulai dari resep, tips & edukasi, produk rekomendasi, dll.
             </p>
@@ -123,6 +123,7 @@ include '../functions/userfunctions.php'
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,64L48,58.7C96,53,192,43,288,80C384,117,480,203,576,197.3C672,192,768,96,864,64C960,32,1056,64,1152,80C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <div>
     </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,256L48,245.3C96,235,192,213,288,186.7C384,160,480,128,576,149.3C672,171,768,245,864,261.3C960,277,1056,235,1152,213.3C1248,192,1344,192,1392,192L1440,192L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
     <!-- Akhir About -->
 
     <!-- Resep -->
@@ -140,7 +141,7 @@ include '../functions/userfunctions.php'
               <div class="card-body">
                 <h5 class="card-title"><?= $data['judul'] ?></h5>
                 <p class="card-text"><?= $data['description'] ?></p>
-                <a href="kategori.php" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <a href="kategori.php?pulau=<?= $data['slug'] ?>" class="btn button-contact">Lihat Lebih Lanjut</a>
               </div>
             </div>
           </div>
@@ -148,6 +149,7 @@ include '../functions/userfunctions.php'
         </div>
       </div>
     </section>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,96L48,85.3C96,75,192,53,288,69.3C384,85,480,139,576,138.7C672,139,768,85,864,74.7C960,64,1056,96,1152,106.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
     <!-- Akhir Resep -->
 
     <!-- Contact  -->
@@ -157,8 +159,8 @@ include '../functions/userfunctions.php'
           <div class="row">
             <div class="col-lg-5 col-md-6 order-0">
               <div class="judul-kontak" data-aos="fade-down">
-                <h1 class="contact-me fw-bold">Contact Me</h1>
-                <h2 class="fw-bold">Silahkan kontak kami. <br> Kami siap membantu</h2>
+                <h1 class="contact-me">Contact Me</h1>
+                <h3>Silahkan kontak kami. <br> Kami siap membantu</h3>
               </div> 
               <div class="kontak" data-aos="fade-right" data-aos-delay="200">
                 <h5>Kontak</h5>
@@ -189,8 +191,8 @@ include '../functions/userfunctions.php'
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 offset-lg-1 form-contact order-sm-3" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
-              <h2 class="text-center pt-2 fw-bold">Ada Pertanyaan...?</h2>
+            <div class="col-lg-6 offset-lg-1 form-contact order-sm-3 pertanyaan" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
+              <h2 class="text-center pt-2">Ada Pertanyaan...?</h2>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label"></label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukan email anda disini...">
@@ -207,7 +209,6 @@ include '../functions/userfunctions.php'
         </div>
       </div>
     </section>
-  
     <!-- Akhir Contact -->
 
     <!-- Footer -->
@@ -217,8 +218,8 @@ include '../functions/userfunctions.php'
         <div class="container costum-container-footer">
           <div class="row text-footer">
             <div class="col-lg-7">
-              <h1>NUSANTARANT</h1>
-              <p>NUSANTARANT adalah situs bertemakan budaya makanan yang ada di indonesia dari berbagai pulau,bertujuan
+              <h1>Resep Makananku</h1>
+              <p>Resep Makananku adalah situs bertemakan budaya makanan yang ada di indonesia dari berbagai pulau,bertujuan
                 untuk mengenalkan makanan-makanan khas indonesia kepada masyarakat</p>
             </div>
             <div class="col-lg-3 makanan-khas">
@@ -236,11 +237,10 @@ include '../functions/userfunctions.php'
               <p>Forums</p>
             </div>
           </div>
-          <hr>
-          <div class="row">
-            <div class="col-12">
-              <p class="text-center">Build By <i class="bi bi-heart-fill"></i> SMK Cyber Media</p>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center copyright p-3">Copyright © Resep Makananku 2022</p>
           </div>
         </div>
       </div>
@@ -259,6 +259,11 @@ include '../functions/userfunctions.php'
       });
     </script>
 
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
   </body>
 
   <!-- Link JS -->
@@ -268,7 +273,7 @@ include '../functions/userfunctions.php'
   <script src="../assets/typed.js/typed.min.js"></script>
   <script>
     var typed = new Typed('.auto-input', {
-      strings: [" Tutorial Resep Makanan"],
+      strings: [" Selamat Datang <?= $_SESSION['user_login'] ?> "],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
