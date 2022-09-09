@@ -151,6 +151,7 @@
       </div>
       <div class="modal-body">
       <div class="col mb-3">
+        <form action="proses.php?action=create" method="post" enctype="multipart/form-data">
                   <label for="judul resep" class="form-label">Judul Resep</label>
                     <input type="text" class="form-control" aria-label="judul resep" name="judul">
                   </div>
@@ -169,7 +170,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        <button type="button" class="btn btn-primary">Kirim</button>
+        <button type="submit    " class="btn btn-primary">Kirim</button>
+        </form>
       </div>
     </div>
   </div>

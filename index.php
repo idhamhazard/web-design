@@ -231,11 +231,12 @@ include 'functions/functions.php';
           <?php
             include 'config/configpdo.php';
             if(isset($_SESSION['user_login'])) { header("location: user/dashboard.php");}
+            if(isset($_SESSION['admin_login'])) { header("location: admin/dashboard.php");}
             if(isset($_POST['login'])) {
-                $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
+                $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
                 $pass = !empty($_POST['pass']) ? trim($_POST['pass']) : null;
-                $query = $conn->prepare("SELECT * FROM user WHERE email = :email");
-                $query->bindParam(":email", $email);
+                $query = $conn->prepare("SELECT * FROM user WHERE username = :username");
+                $query->bindParam(":username", $username);
                 $query->execute();
                 $user = $query->fetch(PDO::FETCH_OBJ);
                 $valid = password_verify($pass, $user->password);
@@ -243,13 +244,18 @@ include 'functions/functions.php';
                   $_SESSION['id_user'] = $user->id;
                   $_SESSION['user_login'] = $user->username;
                   header("location:user/dashboard.php");
+                if($username == "admin");
+                {
+                  $_SESSION['admin_login'] = $user->username;
+                  header("location:admin/dashboard.php");
                 }
             }
+          }
           ?>
           <form action="index.php" method="post">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email Anda</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" required>
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
