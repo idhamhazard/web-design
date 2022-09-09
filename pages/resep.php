@@ -11,7 +11,6 @@
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="../assets/css/style.css" />
-    <link rel="stylesheet" href="../assets/css/kategori.css" />
 
     <!-- Link ICON -->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.png" />

@@ -107,7 +107,7 @@ include '../functions/userfunctions.php'
       <div class="container">
         <div class="row mt-5">
           <div class="col-lg-7 col-sm-12 text-center kata-resep">
-            <h1 class="fw-bolder welcome text-center" data-aos="fade-down" data-aos-delay="100"
+            <h1 class="welcome text-center" data-aos="fade-down" data-aos-delay="100"
             >Selamat Datang di <br><span class="kata-merah">RESEPMAKANANKU</span></h1>
             <p class="lead fs-6 text-lg-start p-resep p1-resep fw-bold" data-aos="fade-right" data-aos-delay="300">ResepMakananku adalah no 1 situs langganan resep masakan yang memiliki informasi terlengkap mengenai segala hal tentang dunia masak-memasak. Mulai dari resep, tips & edukasi, produk rekomendasi, dll.
             </p>
@@ -159,8 +159,8 @@ include '../functions/userfunctions.php'
           <div class="row">
             <div class="col-lg-5 col-md-6 order-0">
               <div class="judul-kontak" data-aos="fade-down">
-                <h1 class="contact-me fw-bold">Contact Me</h1>
-                <h2 class="fw-bold">Silahkan kontak kami. <br> Kami siap membantu</h2>
+                <h1 class="contact-me">Contact Me</h1>
+                <h3>Silahkan kontak kami. <br> Kami siap membantu</h3>
               </div> 
               <div class="kontak" data-aos="fade-right" data-aos-delay="200">
                 <h5>Kontak</h5>
@@ -192,7 +192,7 @@ include '../functions/userfunctions.php'
               </div>
             </div>
             <div class="col-lg-6 offset-lg-1 form-contact order-sm-3 pertanyaan" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
-              <h2 class="text-center pt-2 fw-bold">Ada Pertanyaan...?</h2>
+              <h2 class="text-center pt-2">Ada Pertanyaan...?</h2>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label"></label>
                 <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Masukan email anda disini...">
@@ -236,10 +236,10 @@ include '../functions/userfunctions.php'
               <p>Forums</p>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <p class="text-center copyright">Copyright © Resep Makananku 2022</p>
-            </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="text-center copyright p-3">Copyright © Resep Makananku 2022</p>
           </div>
         </div>
       </div>
@@ -272,7 +272,7 @@ include '../functions/userfunctions.php'
   <script src="../assets/typed.js/typed.min.js"></script>
   <script>
     var typed = new Typed('.auto-input', {
-      strings: [" Welcome <?= $_SESSION['user_login'] ?> "],
+      strings: [" Selamat Datang <?= $_SESSION['user_login'] ?> "],
       typeSpeed: 50,
       backSpeed: 50,
       loop: true,
