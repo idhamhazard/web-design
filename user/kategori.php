@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resep Makananku | Website</title>
+    <title>NUSANTARANT | Website</title>
 
     <!-- Link Bootstrap -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
@@ -28,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="home">
       <div class="container">
         <div class="navbar-brand">
-          <img src="../assets/img/logo.png" alt="" style="width: 55px;"/><span class="judul-logo">Resep Makananku</span>
+          <img src="../assets/img/logo.png" alt="" style="width: 55px;"/><span class="judul-logo">NUSANTARANT</span>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link mx-2 " href="index.html">Home</a>
-            <a class="nav-link mx-2" href="index.html#abaou">About</a>
+            <a class="nav-link mx-2" href="index.html#about">About</a>
             <a class="nav-link mx-2" href="index.html#resep">Resep</a>
             <a class="nav-link mx-2" href="index.html#contact">Contact</a>
             <a class="nav-link mx-2" href="index.html#login">Login</a>
@@ -55,7 +55,7 @@
               <img src="../assets/img/papeda.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Papeda</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">papeda adalah makanan khas papua.</p>
                 <a href="resep.php" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>
             </div>
@@ -74,8 +74,9 @@
          <div class="container costum-container-footer">
            <div class="row text-footer">
              <div class="col-lg-7">
-               <h1>Resep Makananku</h1>
-               <p>ResepMakananku adalah situs kumpulan resep masakan indonesia yang mudah dan praktis.</p>
+               <h1>NUSANTARANT</h1>
+               <p>NUSANTARANT adalah situs bertemakan budaya makanan yang ada di indonesia dari berbagai pulau,bertujuan
+                untuk mengenalkan makanan-makanan khas indonesia kepada masyarakat.</p>
              </div>
              <div class="col-lg-3 makanan-khas">
                <p>Makanan Khas</p>
@@ -91,11 +92,15 @@
                <p>Our Clients</p>
                <p>Forums</p>
              </div>
+              <div class="card-title">2. udang selingkuh 
+                Kuliner ini menggunakan jenis udang air tawar yang berasal dari sungai. Udang ini juga memiliki ukuran yang besar 
+                serta capit yang ukurannya hampir setara dengan kepiting, Itulah mengapa disebut udang selingkuh karena dianggap hasil perselingkuhan anatara udang dan kepiting.
+              </div>
            </div>
          </div>
          <div class="row">
            <div class="col-12">
-             <p class="text-center copyright p-3">Copyright ©️ Resep Makananku 2022</p>
+             <p class="text-center copyright p-3">Copyright ©️ NUSANTARANT 2022</p>
            </div>
          </div>
        </div>

@@ -217,15 +217,16 @@ include '../functions/userfunctions.php'
         <div class="container costum-container-footer">
           <div class="row text-footer">
             <div class="col-lg-7">
-              <h1>Resep Makananku</h1>
-              <p>ResepMakananku adalah situs kumpulan resep masakan indonesia yang mudah dan praktis.</p>
+              <h1>NUSANTARANT</h1>
+              <p>NUSANTARANT adalah situs bertemakan budaya makanan yang ada di indonesia dari berbagai pulau,bertujuan
+                untuk mengenalkan makanan-makanan khas indonesia kepada masyarakat</p>
             </div>
             <div class="col-lg-3 makanan-khas">
-              <p>Makanan Khas</p>
-              <p>Pulau Jawa</p>
+              <h1>Makanan Khas</h1>
               <p>Pulau Sumatra</p>
-              <p>Pulau Sulawesi</p>
+              <p>Pulau Jawa</p>
               <p>Pulau Kalimantan</p>
+              <p>Pulau Sulawesi</p>
               <p>Pulau Papua</p>
             </div>
             <div class="col-lg-2">

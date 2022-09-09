@@ -37,7 +37,7 @@
           <div class="navbar-nav ms-auto">
             <a class="nav-link mx-2 " href="index.html">Home</a>
             <a class="nav-link mx-2" href="index.html#abaou">About</a>
-            <a class="nav-link mx-2" href="index.html#resep">Resep</a>
+            <a class="nav-link mx-2" href="index.html#resep">Recipe</a>
             <a class="nav-link mx-2" href="index.html#contact">Contact</a>
             <a class="nav-link mx-2" href="index.html#login">Login</a>
           </div>    

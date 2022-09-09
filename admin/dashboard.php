@@ -35,7 +35,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Resep Makananku</div>
+                <div class="sidebar-brand-text mx-3">NUSANTARANT</div>
             </a>
 
             <!-- Divider -->
@@ -105,7 +105,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Resep Makananku</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">RESTAURANT</span>
                                 <img class="img-profile rounded-circle"
                                     src="../assets/img/logo.png">
                             </a>
@@ -140,7 +140,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Resep Makananku 2022</span>
+                        <span>Copyright &copy; NUSANTARANT 2022</span>
                     </div>
                 </div>
             </footer>
