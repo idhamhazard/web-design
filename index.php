@@ -246,6 +246,7 @@ include 'functions/functions.php';
                   header("location:admin/dashboard.php");
                 } elseif($valid) {
                   $_SESSION['user_login'] = $user->username;
+                  $_SESSION['id_user'] = $user->id;
                   header("location:user/dashboard.php");
             }
           }
