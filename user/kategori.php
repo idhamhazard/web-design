@@ -7,7 +7,7 @@ include '../functions/userfunctions.php';
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RESEPMAKANANKU | Website</title>
+    <title>Resep Makananku | Website</title>
 
     <!-- Link Bootstrap -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
@@ -30,7 +30,7 @@ include '../functions/userfunctions.php';
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="home">
       <div class="container">
         <div class="navbar-brand">
-          <img src="../assets/img/logo.png" alt="" style="width: 55px;"/><span class="judul-logo">NUSANTARANT</span>
+          <img src="../assets/img/logo.png" alt="" style="width: 55px;"/><span class="judul-logo">Resep Makananku</span>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -46,6 +46,7 @@ include '../functions/userfunctions.php';
         </div>     
       </div>
     </nav>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,288L60,282.7C120,277,240,267,360,229.3C480,192,600,128,720,117.3C840,107,960,149,1080,176C1200,203,1320,213,1380,218.7L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
     <!-- Akhir Navbar -->
 
     <!-- Resep Kategori -->
@@ -65,20 +66,19 @@ include '../functions/userfunctions.php';
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 col-md-12 costum-kategori mb-3 mt-3 col-xl-4">
+          <div class="col-sm-12 col-xl-12 d-flex justify-content-center mb-4">
             <div class="card" style="width: 18rem;">
               <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"> <?= $data['judul'] ?></h5>
-                <p class="card-text"> <?= $data['description'] ?></p>
                 <a href="resep.php?resep=<?= $data['slug'] ?>" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <?php } ?> 
     </section>
+      <?php } ?> 
     <?php } ?> 
     <?php } ?>
     <!-- Akhir Resep Kategori -->
@@ -114,7 +114,7 @@ include '../functions/userfunctions.php';
          </div>
          <div class="row">
            <div class="col-12">
-             <p class="text-center copyright p-3">Copyright ©️ RESEPMAKANANKU 2022</p>
+             <p class="text-center copyright p-3">Copyright ©️ Resep Makananku 2022</p>
            </div>
          </div>
        </div>

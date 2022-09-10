@@ -100,7 +100,7 @@ $id_user = $_SESSION['id_user'];
                   <input class="form-control" type="file" id="formFile" name="foto" required>
                 </div>
                 <div class="mb-3">
-                  <button type="submit" class="btn button-contact" name="submit">Masuk</button>
+                  <button type="submit" class="btn button-contact" name="submit">Kirim</button>
                 </div>
                 </form>
         </div>

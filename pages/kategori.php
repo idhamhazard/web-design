@@ -46,6 +46,7 @@ include '../functions/functions.php';
         </div>     
       </div>
     </nav>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#850e35" fill-opacity="1" d="M0,160L80,154.7C160,149,320,139,480,154.7C640,171,800,213,960,202.7C1120,192,1280,128,1360,96L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
     <!-- Akhir Navbar -->
 
     <!-- Resep Kategori -->
@@ -65,12 +66,11 @@ include '../functions/functions.php';
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 costum-kategori mb-3 mt-3">
+          <div class="col-sm-12 col-xl-12 d-inline-flex justify-content-center mb-4">
             <div class="card" style="width: 18rem;">
               <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title"> <?= $data['judul'] ?></h5>
-                <p class="card-text"> <?= $data['description'] ?></p>
                 <a href="resep.php?resep=<?= $data['slug'] ?>" class="btn button-contact">Klik Lebih Lanjut</a>
               </div>
             </div>

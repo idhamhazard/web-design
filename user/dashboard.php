@@ -135,7 +135,7 @@ include '../functions/userfunctions.php'
             $read = $function->readCategory();
             while($data = $read->fetch_assoc()) {
           ?>
-          <div class="col-lg-4 d-flex justify-content-center mb-3" data-aos="flip-left">
+          <div class="col-sm-12 col-xl-4 d-flex justify-content-center mb-4" data-aos="flip-left">
             <div class="card" style="width: 18rem;">
               <img src="../assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="gambar rendang">
               <div class="card-body">
@@ -169,12 +169,12 @@ include '../functions/userfunctions.php'
                   <p class="ms-2">Jl. Duren Tiga Raya No.12, Duren Tiga, Kec. Pancoran, Kota Jakarta Selatan.</p>
                 </div>
                 <div class="telpon d-flex">
-                  <i class="bi bi-telephone"></i>
-                  <p class="ms-2">021-7919 2313</p>
+                  <i class="bi bi-telephone mt-1"></i>
+                  <p class="ms-2 mt-1">021-7919 2313</p>
                 </div>
                 <div class="email d-flex">
-                  <i class="bi bi-envelope"></i>
-                  <p class="ms-2">info@cybermedia.sch.id</p>
+                  <i class="bi bi-envelope mt-1"></i>
+                  <p class="ms-2 mt-1">info@cybermedia.sch.id</p>
                 </div>
                 <div class="sosial-media" data-aos="fade-left" data-aos-delay="250">
                   <h5>Sosial Media</h5>
@@ -223,7 +223,7 @@ include '../functions/userfunctions.php'
                 untuk mengenalkan makanan-makanan khas indonesia kepada masyarakat</p>
             </div>
             <div class="col-lg-3 makanan-khas">
-              <h1>Makanan Khas</h1>
+              <p>Makanan Khas</p>
               <p>Pulau Sumatra</p>
               <p>Pulau Jawa</p>
               <p>Pulau Kalimantan</p>

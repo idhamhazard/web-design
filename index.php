@@ -132,7 +132,7 @@ include 'functions/functions.php';
             $read = $function->readCategory();
             while($data = $read->fetch_assoc()) {
           ?>
-          <div class="col-lg-4 d-flex justify-content-center mb-3" data-aos="flip-left">
+          <div class="col-sm-12 col-xl-4 d-inline-flex justify-content-center mb-4" data-aos="flip-left">
             <div class="card" style="width: 18rem;">
               <img src="assets/upload/<?= $data['foto'] ?>" class="card-img-top" alt="gambar rendang">
               <div class="card-body">
@@ -167,7 +167,7 @@ include 'functions/functions.php';
                 </div>
                 <div class="telpon d-flex">
                   <i class="bi bi-telephone"></i>
-                  <p class="ms-2">021-7919 2313</p>
+                  <p class="ms-2 telpon-cyber">021-7919 2313</p>
                 </div>
                 <div class="email d-flex">
                   <i class="bi bi-envelope"></i>
@@ -188,7 +188,7 @@ include 'functions/functions.php';
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 offset-lg-1 form-contact order-sm-3" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
+            <div class="col-lg-6 offset-lg-1 form-contact" data-aos="flip-left" data-aos-delay="100" data-aos-offset="250">
               <h2 class="text-center pt-2">Ada Pertanyaan...?</h2>
               <?php
                 if(isset($_POST['kirim'])) 

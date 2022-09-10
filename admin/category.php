@@ -184,7 +184,7 @@
                                             <th>Judul</th>
                                             <th>Deskripsi</th>
                                             <th>Slug</th>
-                                            <th>Kategori</th>
+                                            <th>Foto</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -204,7 +204,7 @@
                                             <td><img src="../assets/upload/<?= $data['foto'] ?>" alt="" height="100px" width="100px"></td>
                                             <td>
                                                 <a class="btn btn-primary" href="proses.php?action=delete&id=<?= $data['id'] ?>">Hapus</a> 
-                                                <a class="btn btn-primary" href="edit.php?id=<?= $data['id'] ?>">Edit</a>
+                                                <a class="btn btn-primary edit-admin" href="edit.php?id=<?= $data['id'] ?>">Edit</a>
                                             </td>
                                             
                                         </tr>
