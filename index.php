@@ -138,7 +138,7 @@ include 'functions/functions.php';
               <div class="card-body">
                 <h5 class="card-title"><?= $data['judul'] ?></h5>
                 <p class="card-text"><?= $data['description'] ?></p>
-                <a href="pages/kategori.php?pulau=<?= $data['slug'] ?>" class="btn button-contact">Lihat Lebih Lanjut</a>
+                <a href="pages/kategori.php?pulau=<?= $data['slug'] ?>" class="btn button-contact">Lihat Lebih Banyak</a>
               </div>
             </div>
           </div>
@@ -240,15 +240,14 @@ include 'functions/functions.php';
                 $query->execute();
                 $user = $query->fetch(PDO::FETCH_OBJ);
                 $valid = password_verify($pass, $user->password);
-                if($valid) {
-                  $_SESSION['id_user'] = $user->id;
-                  $_SESSION['user_login'] = $user->username;
-                  header("location:user/dashboard.php");
-                if($username == "admin");
-                {
-                  $_SESSION['admin_login'] = $user->username;
+                if($username === "admin") {
+                  $valid = password_verify($pass, $user->password);
+                  $_SESSION['user_login'];
                   header("location:admin/dashboard.php");
-                }
+                } elseif($valid) {
+                  $_SESSION['user_login'] = $user->username;
+                  $_SESSION['id_user'] = $user->id;
+                  header("location:user/dashboard.php");
             }
           }
           ?>

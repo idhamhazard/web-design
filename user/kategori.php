@@ -7,7 +7,7 @@ include '../functions/userfunctions.php';
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resep Makananku | Website</title>
+    <title>RESEPMAKANANKU | Website</title>
 
     <!-- Link Bootstrap -->
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css" />
@@ -30,7 +30,7 @@ include '../functions/userfunctions.php';
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="home">
       <div class="container">
         <div class="navbar-brand">
-          <img src="../assets/img/logo.png" alt="" style="width: 55px;"/><span class="judul-logo">Resep Makananku</span>
+          <img src="../assets/img/logo.png" alt="" style="width: 55px;"/><span class="judul-logo">NUSANTARANT</span>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -93,7 +93,8 @@ include '../functions/userfunctions.php';
            <div class="row text-footer">
              <div class="col-lg-7">
                <h1>Resep Makananku</h1>
-               <p>ResepMakananku adalah situs kumpulan resep masakan indonesia yang mudah dan praktis.</p>
+               <p>Resep Makananku adalah situs bertemakan budaya makanan yang ada di indonesia dari berbagai pulau,bertujuan
+                untuk mengenalkan makanan-makanan khas indonesia kepada masyarakat.</p>
              </div>
              <div class="col-lg-3 makanan-khas">
                <p>Makanan Khas</p>
@@ -113,7 +114,7 @@ include '../functions/userfunctions.php';
          </div>
          <div class="row">
            <div class="col-12">
-             <p class="text-center copyright p-3">Copyright ©️ Resep Makananku 2022</p>
+             <p class="text-center copyright p-3">Copyright ©️ RESEPMAKANANKU 2022</p>
            </div>
          </div>
        </div>
